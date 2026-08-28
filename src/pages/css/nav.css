@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 900;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* EMS Box */
+
+.navbar-logo::before {
+    content: "E";
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.20);
+}
+
+
+/* Logo text */
+
+.navbar-logo span {
+    color: #111827;
+
+    font-size: 19px;
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+}
+
+
+.navbar-logo small {
+    display: block;
+
+    margin-left: 1px;
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================
+   USER
+========================= */
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 5px 9px;
+
+    border-radius: 10px;
+
+    transition: 0.25s ease;
+}
+
+
+.navbar-user:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border: 1px solid #dbeafe;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   USER DETAILS
+========================= */
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 80px;
+
+    line-height: 1.2;
+}
+
+
+.user-details h4 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+.user-details span {
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-transform: capitalize;
+}
+
+
+/* Role indicator */
+
+.user-details span::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.navbar-user::before {
+    content: "";
+
+    width: 1px;
+    height: 32px;
+
+    background: #e5e7eb;
+
+    margin-right: 5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 65px;
+
+        padding: 0 18px;
+    }
+
+    .navbar-logo::before {
+        width: 35px;
+        height: 35px;
+
+        font-size: 15px;
+    }
+
+    .navbar-logo span {
+        font-size: 17px;
+    }
+
+    .navbar-logo small {
+        display: none;
+    }
+
+    .user-avatar {
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .user-details h4 {
+        font-size: 12px;
+    }
+
+    .user-details span {
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .user-details {
+        min-width: auto;
+    }
+
+    .user-details h4 {
+        font-size: 11px;
+    }
+
+    .navbar-user {
+        gap: 7px;
+    }
+}

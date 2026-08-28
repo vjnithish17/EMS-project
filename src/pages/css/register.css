@@ -1,0 +1,253 @@
+/* =========================
+   Register Page
+========================= */
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+  padding: 30px;
+}
+
+
+/* =========================
+   Register Card
+========================= */
+
+.register-card {
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  padding: 38px;
+  border-radius: 16px;
+  border: 1px solid #e8ebf0;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+.register-card h1 {
+  margin: 0 0 8px;
+  text-align: center;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.register-subtitle {
+  margin: 0 0 28px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* =========================
+   Input / Select
+========================= */
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #1f2937;
+
+  font-size: 14px;
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+.register-form input::placeholder {
+  color: #9ca3af;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================
+   Select
+========================= */
+
+.register-form select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+
+/* =========================
+   Register Button
+========================= */
+
+.register-btn {
+  width: 100%;
+  height: 46px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+/* =========================
+   Success Toast
+========================= */
+
+.success-toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+
+  min-width: 320px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #22c55e;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  z-index: 9999;
+
+  animation: toastSlide 0.35s ease;
+}
+
+
+/* Success Icon */
+
+.success-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dcfce7;
+  color: #16a34a;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* Toast Text */
+
+.success-toast strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #166534;
+
+  font-size: 14px;
+}
+
+.success-toast p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+/* Animation */
+
+@keyframes toastSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .success-toast {
+    top: 15px;
+    right: 15px;
+    left: 15px;
+
+    min-width: auto;
+  }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 500px) {
+  .register-page {
+    padding: 20px;
+  }
+
+  .register-card {
+    padding: 28px 22px;
+  }
+
+  .register-card h1 {
+    font-size: 24px;
+  }
+}

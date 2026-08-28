@@ -1,0 +1,235 @@
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-container {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 35px;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-header p {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* =========================
+   STATS GRID
+========================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.stat-card {
+    position: relative;
+
+    min-height: 150px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================
+   CARD TOP LINE
+========================= */
+
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.stat-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   EMPLOYEE CARD
+========================= */
+
+.employees-card::before {
+    background: #2563eb;
+}
+
+.employees-card .stat-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+/* =========================
+   SALARY CARD
+========================= */
+
+.salary-card::before {
+    background: #16a34a;
+}
+
+.salary-card .stat-icon {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+
+/* =========================
+   DEPARTMENT CARD
+========================= */
+
+.department-card::before {
+    background: #9333ea;
+}
+
+.department-card .stat-icon {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.stat-content span {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.stat-content h2 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-container {
+        padding: 22px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .stat-card {
+        min-height: 130px;
+        padding: 20px;
+    }
+
+}
