@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./css/employees.css";
 import { toast } from "react-toastify";
+import api from "../services/api";
 
 function Employees() {
   const [employees, setEmployees] = useState([]);
@@ -30,8 +30,8 @@ function Employees() {
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
       const token = localStorage.getItem("token");
-      const response = await axios.get(
-        `http://localhost:5000/api/employees?serach=${serach}&page=${page}&limit=5&sort=${sort}`,
+      const response = await api.get(
+        `/api/employees?serach=${serach}&page=${page}&limit=5&sort=${sort}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -88,8 +88,8 @@ function Employees() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.post(
-        "http://localhost:5000/api/employees/create",
+      const response = await api.post(
+        "/api/employees/create",
         employeeData,
         {
           headers: {
@@ -130,8 +130,8 @@ function Employees() {
     console.log(id);
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.delete(
-        `http://localhost:5000/api/employees/${id}`,
+      const response = await api.delete(
+        `/api/employees/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -178,8 +178,8 @@ function Employees() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.put(
-        `http://localhost:5000/api/employees/${editId}`,
+      const response = await api.put(
+        `/api/employees/${editId}`,
         updateData,
         {
           headers: {

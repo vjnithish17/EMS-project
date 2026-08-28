@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import"../pages/css/dashboard.css";
+import api from "../services/api"
 function Dashboard() {
   const [stats, setStats] = useState({});
 
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(
-        "http://localhost:5000/api/employees/stats/dashboard",
+      const response = await api.get(
+        "/api/employees/stats/dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`,
